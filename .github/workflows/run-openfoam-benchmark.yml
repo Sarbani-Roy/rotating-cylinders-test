@@ -9,7 +9,6 @@ on:
 
 env:
   CACHE_NUMBER: 1  
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
   
 jobs:
   openfoam-tests:
