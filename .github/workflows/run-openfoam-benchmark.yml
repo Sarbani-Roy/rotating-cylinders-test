@@ -46,5 +46,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: results
-          path: $GITHUB_WORKSPACE/openfoam/results
+          path: ${{ github.workspace }}/results
           retention-days: 5
