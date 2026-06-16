@@ -48,9 +48,9 @@ for param_file in root_dir.glob("parameters_*.json"):
                 "--config", f'conf_name="{config_name}"',
                 "--force"
             ], check=True, cwd=output_dir)
-            print(f"Workflow executed successfully for {config_name}.")  # ✅ Only runs if no exception
+            print(f"Workflow executed successfully for {config_name}.")
         except subprocess.CalledProcessError as e:
-            print(f"Workflow failed for {config_name}.")
+            print(f"Workflow failed for {config_name}with return code {e.returncode}.")
         
 print("\nAll configurations processed.")    
 
