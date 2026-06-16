@@ -34,7 +34,7 @@ jobs:
           apptainer-version: 1.4.5
 
       - name: Update environment
-        run: mamba env update -n model-validation -f GITHUB_WORKSPACE/dumux/environment_benchmarks.yml
+        run: mamba env update -n model-validation -f $GITHUB_WORKSPACE/dumux/environment_benchmarks.yml
 
       - name: Simulate rotating cylinders using dumux & validate convergence
         shell: bash -l {0}
