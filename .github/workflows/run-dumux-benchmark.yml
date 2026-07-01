@@ -46,6 +46,17 @@ jobs:
             --benchmark-zip rocrate_dumux.zip \
             --result-path ./results
 
+      - name: Generate convergence plots
+        shell: bash -l {0}
+        run: |
+          # plot_convergence.py derives its root dir from its own file location
+          # (Path(__file__).resolve().parent) and scans that dir's immediate
+          # subdirectories for a results/ folder. It must sit next to dumux/
+          # (repo root), not inside scripts/, so we copy it there first.
+          cp $GITHUB_WORKSPACE/scripts/plot_convergence.py $GITHUB_WORKSPACE/plot_convergence.py
+          cd $GITHUB_WORKSPACE
+          python3 plot_convergence.py
+
       - name: Upload results
         uses: actions/upload-artifact@v4
         with:

@@ -23,7 +23,7 @@ import semantic_benchmark
 LOG_FORMAT = "%(levelname)s:%(name)s:%(message)s"
 LOGGER = logging.getLogger(__name__)
 
-TOOL_NAME = "Fenics"
+TOOL_NAME = "dumux"
 BENCHMARK_DIR = Path(__file__).resolve().parent
 
 PROVENANCE_REPORTER_NAME = "metadata4ing"
