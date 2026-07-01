@@ -41,7 +41,10 @@ jobs:
         shell: bash -l {0}
         run: |
           cd $GITHUB_WORKSPACE/dumux
-          python3 run_benchmark.py
+          python3 run_benchmark.py \
+            --benchmark-file benchmark.json \
+            --benchmark-zip rocrate_dumux.zip \
+            --result-path ./results
 
       - name: Upload results
         uses: actions/upload-artifact@v4
