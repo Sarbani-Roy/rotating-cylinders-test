@@ -28,7 +28,7 @@ BENCHMARK_DIR = Path(__file__).resolve().parent
 
 PROVENANCE_REPORTER_NAME = "metadata4ing"
 PROVENANCE_REPORT_NAME = "NFDI4Ing Provenance"
-PROVENANCE_REPORT_DESCRIPTION = "Benchmark for linear-elastic plate with a hole"
+PROVENANCE_REPORT_DESCRIPTION = "Benchmark for rotating cylinders"
 PROVENANCE_REPORT_LICENSE = "https://opensource.org/licenses/MIT"
 PROVENANCE_PROFILE = "provenance-run-crate-0.5"
 
