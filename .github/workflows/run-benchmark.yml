@@ -26,9 +26,9 @@ jobs:
       matrix:
         include:
           - tool: dumux
-            used_software_url: https://zbmath.org/software/TODO-dumux
+            used_software_url: https://zbmath.org/software/14293
           - tool: openfoam
-            used_software_url: https://zbmath.org/software/TODO-openfoam
+            used_software_url: https://zbmath.org/software/4317
 
     steps:
       - name: checkout repo content
@@ -38,7 +38,7 @@ jobs:
         uses: conda-incubator/setup-miniconda@v3
         with:
           miniforge-version: latest
-          activate-environment: model-validation
+          activate-environment: rotating-cylinders-model-validation
           use-mamba: true
           conda-remove-defaults: true
 
@@ -51,7 +51,7 @@ jobs:
           apptainer-version: 1.4.5
 
       - name: Update environment
-        run: mamba env update -n model-validation -f $GITHUB_WORKSPACE/environment_benchmarks.yml
+        run: mamba env update -n rotating-cylinders-model-validation -f $GITHUB_WORKSPACE/environment_benchmarks.yml
 
       - name: Install RoHub package
         shell: bash -l {0}
@@ -158,7 +158,7 @@ jobs:
         uses: conda-incubator/setup-miniconda@v3
         with:
           miniforge-version: latest
-          activate-environment: provenance
+          activate-environment: rotating-cylinders-provenance
           use-mamba: true
           environment-file: provenance/environment_provenance.yml
           conda-remove-defaults: true
